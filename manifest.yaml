@@ -1,0 +1,312 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: homepage
+  namespace: gethomepage
+  labels:
+    app.kubernetes.io/name: homepage
+secrets:
+  - name: homepage
+---
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: homepage
+  namespace: gethomepage
+  labels:
+    app.kubernetes.io/name: homepage
+  annotations:
+    kubernetes.io/service-account.name: homepage
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+  namespace: gethomepage
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  kubernetes.yaml: |
+    mode: cluster
+  settings.yaml: ""
+  #settings.yaml: |
+  #  providers:
+  #    longhorn:
+  #      url: https://longhorn.my.network
+  custom.css: ""
+  custom.js: ""
+  bookmarks.yaml: |
+    - Developer:
+        - Github:
+            - abbr: GH
+              href: https://github.com/hfolguera?tab=repositories
+  services.yaml: |
+    - Infrastructure:
+        - Proxmox:
+            icon: proxmox.png
+            href: https://cf-vm-node1.calfolguera.com:8006/
+            description: Hypervisor
+            siteMonitor: https://cf-vm-node1.calfolguera.com:8006/
+        - Synology ds220j:
+            icon: synology.png
+            href: https://192.168.1.11:5001/
+            description: Synology NAS
+            siteMonitor: https://192.168.1.11:5001/
+        - Zyxel NSA310S:
+            href: http://192.168.1.12
+            description: Zyxel NAS
+            siteMonitor: http://192.168.1.12
+
+    - Services:
+        - Argocd:
+            icon: argocd.png
+            href: https://argocd.calfolguera.duckdns.org
+            description: Declarative GitOps CD for Kubernetes
+        - Jenkins:
+            icon: jenkins.png
+            href: https://jenkins.calfolguera.duckdns.org
+            description: Build great things at any scale
+        - AWX:
+            icon: ansible.png
+            href: https://awx.calfolguera.duckdns.org
+            description: Provides a web-based user interface, REST API, and task engine built on top of Ansible
+        - Grafana:
+            icon: grafana.png
+            href: https://grafana.calfolguera.duckdns.org
+            description: Observability in minutes
+        - N8N:
+            icon: n8n.png
+            href: https://n8n.calfolguera.duckdns.org
+            description: Automate Workflows Easily
+        - Wordpress:
+            icon: wordpress.png
+            href: https://wordpress.calfolguera.duckdns.org
+            description: Do it all with WordPress
+        - Prometheus:
+            icon: prometheus.png
+            href: http://calfolguera.ddns.net:9090
+            description: An open-source monitoring system
+            widget:
+              type: prometheus
+              url: http://calfolguera.ddns.net:9090
+    - Smarthome:
+        - Home Assistant:
+            icon: home-assistant.png
+            href: http://homeassistant.calfolguera.com
+            description: Home Assistant
+            siteMonitor: http://homeassistant.calfolguera.com
+            widget:
+              type: homeassistant
+              url: http://homeassistant.calfolguera.com:8123
+              key: access_token
+        - Plex:
+            icon: plex.png
+            href: http://192.168.1.11:32400/web
+            description: Plex Media Server
+            siteMonitor: http://192.168.1.11:32400/web
+            widget:
+              type: plex
+              url: http://192.168.1.11:32400
+              key: j9csoswLX6swa4gA9YgV
+    - Nerea:
+        - OCI Tenant:
+            icon: oracle-cloud.png
+            href: https://console.eu-frankfurt-1.oraclecloud.com/?tenant=nereamena&provider=OracleIdentityCloudService
+            description: Oracle Cloud Infrastructure
+        - Wordpress:
+            icon: wordpress.png
+            href: http://nereamenapsicologia.com
+            description: Website
+            siteMonitor: http://nereamenapsicologia.com
+        - SuiteCRM:
+            href: http://suitecrm.psiconerea.duckdns.org
+            description: CRM
+            siteMonitor: http://suitecrm.psiconerea.duckdns.org
+  widgets.yaml: |
+    # - kubernetes:
+    #     cluster:
+    #       show: true
+    #       cpu: true
+    #       memory: true
+    #       showLabel: true
+    #       label: "cluster"
+    #     nodes:
+    #       show: true
+    #       cpu: true
+    #       memory: true
+    #       showLabel: true
+    - resources:
+        backend: resources
+        expanded: true
+        cpu: true
+        memory: true
+    - search:
+        provider: duckduckgo
+        target: _blank
+  docker.yaml: ""
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: homepage
+  labels:
+    app.kubernetes.io/name: homepage
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - namespaces
+      - pods
+      - nodes
+    verbs:
+      - get
+      - list
+  - apiGroups:
+      - extensions
+      - networking.k8s.io
+    resources:
+      - ingresses
+    verbs:
+      - get
+      - list
+  - apiGroups:
+      - traefik.containo.us
+    resources:
+      - ingressroutes
+    verbs:
+      - get
+      - list
+  - apiGroups:
+      - metrics.k8s.io
+    resources:
+      - nodes
+      - pods
+    verbs:
+      - get
+      - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: homepage
+  labels:
+    app.kubernetes.io/name: homepage
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: homepage
+subjects:
+  - kind: ServiceAccount
+    name: homepage
+    namespace: gethomepage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homepage
+  namespace: gethomepage
+  labels:
+    app.kubernetes.io/name: homepage
+  annotations:
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3000
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: homepage
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homepage
+  namespace: gethomepage
+  labels:
+    app.kubernetes.io/name: homepage
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: homepage
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: homepage
+    spec:
+      serviceAccountName: homepage
+      automountServiceAccountToken: true
+      dnsPolicy: ClusterFirst
+      enableServiceLinks: true
+      containers:
+        - name: homepage
+          image: "ghcr.io/gethomepage/homepage:latest"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /app/config/custom.js
+              name: homepage-config
+              subPath: custom.js
+            - mountPath: /app/config/custom.css
+              name: homepage-config
+              subPath: custom.css
+            - mountPath: /app/config/bookmarks.yaml
+              name: homepage-config
+              subPath: bookmarks.yaml
+            - mountPath: /app/config/docker.yaml
+              name: homepage-config
+              subPath: docker.yaml
+            - mountPath: /app/config/kubernetes.yaml
+              name: homepage-config
+              subPath: kubernetes.yaml
+            - mountPath: /app/config/services.yaml
+              name: homepage-config
+              subPath: services.yaml
+            - mountPath: /app/config/settings.yaml
+              name: homepage-config
+              subPath: settings.yaml
+            - mountPath: /app/config/widgets.yaml
+              name: homepage-config
+              subPath: widgets.yaml
+            - mountPath: /app/config/logs
+              name: logs
+      volumes:
+        - name: homepage-config
+          configMap:
+            name: homepage
+        - name: logs
+          emptyDir: {}
+#---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: homepage
+#   namespace: gethomepage
+#   labels:
+#     app.kubernetes.io/name: homepage
+#   annotations:
+#     gethomepage.dev/description: Dynamically Detected Homepage
+#     gethomepage.dev/enabled: "true"
+#     gethomepage.dev/group: Cluster Management
+#     gethomepage.dev/icon: homepage.png
+#     gethomepage.dev/name: Homepage
+# spec:
+#   rules:
+#     - host: "homepage.calfolguera.duckdns.org"
+#       http:
+#         paths:
+#           - path: "/"
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: homepage
+#                 port:
+#                   number: 3000
