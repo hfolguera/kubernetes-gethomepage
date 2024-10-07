@@ -75,6 +75,10 @@ data:
             icon: grafana.png
             href: https://grafana.calfolguera.duckdns.org
             description: Observability in minutes
+        - Kibana:
+            icon: kibana.png
+            href: https://kibana.calfolguera.duckdns.org
+            description: Explore, Visualize, Discover Data
         - N8N:
             icon: n8n.png
             href: https://n8n.calfolguera.duckdns.org
