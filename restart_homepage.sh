@@ -1,8 +1,7 @@
 #!/bin/bash
 
-NS=gethomepage
-RS=`kubectl get rs -n $NS -o jsonpath='{.items[0].metadata.name}'`
+kubectl delete deployment.apps/homepage -n gethomepage
 
-kubectl scale rs $RS --replicas=0 -n $NS
+# ArgoCD will create it again automatically
 
 exit 0
