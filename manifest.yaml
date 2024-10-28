@@ -113,6 +113,10 @@ data:
               type: plex
               url: http://192.168.1.11:32400
               key: j9csoswLX6swa4gA9YgV
+        - Vaultwarden:
+            icon: vaultwarden.svg
+            href: https://vaultwarden.calfolguera.duckdns.org
+            description: The community driven password manager
     - Nerea:
         - OCI Tenant:
             icon: oracle-cloud.png
