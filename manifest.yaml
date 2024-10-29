@@ -48,6 +48,11 @@ data:
             href: https://cf-vm-node1.calfolguera.com:8006/
             description: Hypervisor
             siteMonitor: https://cf-vm-node1.calfolguera.com:8006/
+            widget:
+              type: proxmox
+              url: https://cf-vm-node1.calfolguera.com:8006
+              username: api@pam!homepage
+              password: 22073850-c8a8-40ca-be03-3cf7e7277d66
         - Synology ds220j:
             icon: synology.png
             href: https://192.168.1.11:5001/
