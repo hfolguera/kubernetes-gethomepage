@@ -122,6 +122,10 @@ data:
             icon: vaultwarden.svg
             href: https://vaultwarden.calfolguera.duckdns.org
             description: The community driven password manager
+        - Microbin:
+            icon: microbin.png
+            href: https://microbin.calfolguera.duckdns.org
+            description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
     - Nerea:
         - OCI Tenant:
             icon: oracle-cloud.png
