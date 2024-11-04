@@ -43,6 +43,10 @@ data:
               href: https://github.com/hfolguera?tab=repositories
   services.yaml: |
     - Infrastructure:
+        - Router:
+            icon: dd-wrt.png
+            href: http://192.168.1.1
+            description: Mitrastar HGU gpt-2541gnac
         - Proxmox:
             icon: proxmox.png
             href: https://cf-vm-node1.calfolguera.com:8006/
@@ -99,6 +103,7 @@ data:
             widget:
               type: prometheus
               url: http://calfolguera.ddns.net:9090
+
     - Smarthome:
         - Home Assistant:
             icon: home-assistant.png
@@ -126,6 +131,7 @@ data:
             icon: microbin.png
             href: https://microbin.calfolguera.duckdns.org
             description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
+
     - Nerea:
         - OCI Tenant:
             icon: oracle-cloud.png
