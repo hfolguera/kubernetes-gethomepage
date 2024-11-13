@@ -114,7 +114,7 @@ data:
             icon: prometheus.png
             href: http://calfolguera.ddns.net:9090
             description: An open-source monitoring system
-            siteMonitor: https://calfolguera.ddns.net:9090
+            siteMonitor: http://calfolguera.ddns.net:9090
             statusStyle: 'dot'
             widget:
               type: prometheus
