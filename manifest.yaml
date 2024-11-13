@@ -77,6 +77,7 @@ data:
             href: https://jenkins.calfolguera.duckdns.org
             description: Build great things at any scale
             siteMonitor: https://jenkins.calfolguera.duckdns.org
+            statusStyle: 'basic'
         - AWX:
             icon: ansible.png
             href: https://awx.calfolguera.duckdns.org
