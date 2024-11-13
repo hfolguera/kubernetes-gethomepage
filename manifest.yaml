@@ -72,6 +72,8 @@ data:
             icon: argocd.png
             href: https://argocd.calfolguera.duckdns.org
             description: Declarative GitOps CD for Kubernetes
+            siteMonitor: https://argocd.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - Jenkins:
             icon: jenkins.png
             href: https://jenkins.calfolguera.duckdns.org
@@ -82,26 +84,38 @@ data:
             icon: ansible.png
             href: https://awx.calfolguera.duckdns.org
             description: Provides a web-based user interface, REST API, and task engine built on top of Ansible
+            siteMonitor: https://awx.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - Grafana:
             icon: grafana.png
             href: https://grafana.calfolguera.duckdns.org
             description: Observability in minutes
+            siteMonitor: https://grafana.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - Kibana:
             icon: kibana.png
             href: https://kibana.calfolguera.duckdns.org
             description: Explore, Visualize, Discover Data
+            siteMonitor: https://kibana.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - N8N:
             icon: n8n.png
             href: https://n8n.calfolguera.duckdns.org
             description: Automate Workflows Easily
+            siteMonitor: https://n8n.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - Wordpress:
             icon: wordpress.png
             href: https://wordpress.calfolguera.duckdns.org
             description: Do it all with WordPress
+            siteMonitor: https://wordpress.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - Prometheus:
             icon: prometheus.png
             href: http://calfolguera.ddns.net:9090
             description: An open-source monitoring system
+            siteMonitor: https://calfolguera.ddns.net:9090
+            statusStyle: 'dot'
             widget:
               type: prometheus
               url: http://calfolguera.ddns.net:9090
@@ -129,10 +143,14 @@ data:
             icon: vaultwarden.svg
             href: https://vaultwarden.calfolguera.duckdns.org
             description: The community driven password manager
+            siteMonitor: https://vaultwarden.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - Microbin:
             icon: microbin.png
             href: https://microbin.calfolguera.duckdns.org
             description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
+            siteMonitor: https://microbin.calfolguera.duckdns.org
+            statusStyle: 'dot'
 
     - Nerea:
         - OCI Tenant:
