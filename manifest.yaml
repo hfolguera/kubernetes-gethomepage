@@ -139,6 +139,12 @@ data:
               type: plex
               url: http://192.168.1.11:32400
               key: j9csoswLX6swa4gA9YgV
+        - Adguard:
+            icon: adguard-home.svg
+            href: https://adguard.calfolguera.duckdns.org
+            description: Surf the Web ad-free and safely. Shields up!
+            siteMonitor: https://adguard.calfolguera.duckdns.org
+            statusStyle: 'dot'
         - Vaultwarden:
             icon: vaultwarden.svg
             href: https://vaultwarden.calfolguera.duckdns.org

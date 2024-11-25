@@ -2,6 +2,8 @@
 
 kubectl delete deployment.apps/homepage -n gethomepage
 
-# ArgoCD will create it again automatically
+sleep 2
+
+kubectl apply -f manifest.yaml
 
 exit 0
