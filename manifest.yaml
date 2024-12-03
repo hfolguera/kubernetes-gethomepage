@@ -157,6 +157,16 @@ data:
             description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
             siteMonitor: https://microbin.calfolguera.duckdns.org
             statusStyle: 'dot'
+        - Uptime Kuma
+            icon: uptime-kuma.svg
+            href: https://uptimekuma.calfolguera.duckdns.org
+            description: A self-hosted monitoring tool
+            siteMonitor: https://uptimekuma.calfolguera.duckdns.org
+            statusStyle: 'dot'
+            widget:
+              type: uptimekuma
+              url: https://uptimekuma.calfolguera.duckdns.org
+              slug: statuspageslug
 
     - Nerea:
         - OCI Tenant:
