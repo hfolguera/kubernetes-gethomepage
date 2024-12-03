@@ -166,7 +166,7 @@ data:
             widget:
               type: uptimekuma
               url: https://uptimekuma.calfolguera.duckdns.org
-              slug: statuspageslug
+              slug: default
 
     - Nerea:
         - OCI Tenant:
