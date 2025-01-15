@@ -171,17 +171,18 @@ data:
     - Nerea:
         - OCI Tenant:
             icon: oracle-cloud.png
-            href: https://console.eu-frankfurt-1.oraclecloud.com/?tenant=nereamena&provider=OracleIdentityCloudService
+            href: https://cloud.oracle.com/?tenant=nereamena&provider=default
             description: Oracle Cloud Infrastructure
         - Wordpress:
             icon: wordpress.png
-            href: http://nereamenapsicologia.com
+            href: https://nereamenapsicologia.com
             description: Website
-            siteMonitor: http://nereamenapsicologia.com
-        - SuiteCRM:
-            href: http://suitecrm.psiconerea.duckdns.org
+            siteMonitor: https://nereamenapsicologia.com
+        - InvoiceNinja:
+            icon: invoice-ninja-light.svg
+            href: https://invoiceninja.calfolguera.freemyip.com
             description: CRM
-            siteMonitor: http://suitecrm.psiconerea.duckdns.org
+            siteMonitor: https://invoiceninja.calfolguera.freemyip.com
   widgets.yaml: |
     # - kubernetes:
     #     cluster:
