@@ -70,45 +70,45 @@ data:
     - Services:
         - Argocd:
             icon: argocd.png
-            href: https://argocd.calfolguera.duckdns.org
+            href: https://argocd.calfolguera.freemyip.com
             description: Declarative GitOps CD for Kubernetes
-            siteMonitor: https://argocd.calfolguera.duckdns.org
+            siteMonitor: https://argocd.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Jenkins:
             icon: jenkins.png
-            href: https://jenkins.calfolguera.duckdns.org
+            href: https://jenkins.calfolguera.freemyip.com
             description: Build great things at any scale
-            siteMonitor: https://jenkins.calfolguera.duckdns.org
+            siteMonitor: https://jenkins.calfolguera.freemyip.com
             statusStyle: 'dot'
         - AWX:
             icon: ansible.png
-            href: https://awx.calfolguera.duckdns.org
+            href: https://awx.calfolguera.freemyip.com
             description: Provides a web-based user interface, REST API, and task engine built on top of Ansible
-            siteMonitor: https://awx.calfolguera.duckdns.org
+            siteMonitor: https://awx.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Grafana:
             icon: grafana.png
-            href: https://grafana.calfolguera.duckdns.org
+            href: https://grafana.calfolguera.freemyip.com
             description: Observability in minutes
-            siteMonitor: https://grafana.calfolguera.duckdns.org
+            siteMonitor: https://grafana.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Kibana:
             icon: kibana.png
-            href: https://kibana.calfolguera.duckdns.org
+            href: https://kibana.calfolguera.freemyip.com
             description: Explore, Visualize, Discover Data
-            siteMonitor: https://kibana.calfolguera.duckdns.org
+            siteMonitor: https://kibana.calfolguera.freemyip.com
             statusStyle: 'dot'
         - N8N:
             icon: n8n.png
-            href: https://n8n.calfolguera.duckdns.org
+            href: https://n8n.calfolguera.freemyip.com
             description: Automate Workflows Easily
-            siteMonitor: https://n8n.calfolguera.duckdns.org
+            siteMonitor: https://n8n.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Wordpress:
             icon: wordpress.png
-            href: https://wordpress.calfolguera.duckdns.org
+            href: https://wordpress.calfolguera.freemyip.com
             description: Do it all with WordPress
-            siteMonitor: https://wordpress.calfolguera.duckdns.org
+            siteMonitor: https://wordpress.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Prometheus:
             icon: prometheus.png
@@ -141,31 +141,31 @@ data:
               key: j9csoswLX6swa4gA9YgV
         - Adguard:
             icon: adguard-home.svg
-            href: https://adguard.calfolguera.duckdns.org
+            href: https://adguard.calfolguera.freemyip.com
             description: Surf the Web ad-free and safely. Shields up!
-            siteMonitor: https://adguard.calfolguera.duckdns.org
+            siteMonitor: https://adguard.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Vaultwarden:
             icon: vaultwarden.svg
-            href: https://vaultwarden.calfolguera.duckdns.org
+            href: https://vaultwarden.calfolguera.freemyip.com
             description: The community driven password manager
-            siteMonitor: https://vaultwarden.calfolguera.duckdns.org
+            siteMonitor: https://vaultwarden.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Microbin:
             icon: microbin.png
-            href: https://microbin.calfolguera.duckdns.org
+            href: https://microbin.calfolguera.freemyip.com
             description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
-            siteMonitor: https://microbin.calfolguera.duckdns.org
+            siteMonitor: https://microbin.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Uptime Kuma:
             icon: uptime-kuma.svg
-            href: https://uptimekuma.calfolguera.duckdns.org
+            href: https://uptimekuma.calfolguera.freemyip.com
             description: A self-hosted monitoring tool
-            siteMonitor: https://uptimekuma.calfolguera.duckdns.org
+            siteMonitor: https://uptimekuma.calfolguera.freemyip.com
             statusStyle: 'dot'
             widget:
               type: uptimekuma
-              url: https://uptimekuma.calfolguera.duckdns.org
+              url: https://uptimekuma.calfolguera.freemyip.com
               slug: default
 
     - Nerea:
@@ -359,7 +359,7 @@ spec:
 #     gethomepage.dev/name: Homepage
 # spec:
 #   rules:
-#     - host: "homepage.calfolguera.duckdns.org"
+#     - host: "homepage.calfolguera.freemyip.com"
 #       http:
 #         paths:
 #           - path: "/"
