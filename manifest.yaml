@@ -69,7 +69,7 @@ data:
 
     - Services:
         - Argocd:
-            icon: argocd.png
+            icon: argo-cd.png
             href: https://argocd.calfolguera.freemyip.com
             description: Declarative GitOps CD for Kubernetes
             siteMonitor: https://argocd.calfolguera.freemyip.com
@@ -119,6 +119,12 @@ data:
             widget:
               type: prometheus
               url: http://calfolguera.ddns.net:9090
+        - NTFY:
+            icon: ntfy.png
+            href: https://ntfy.calfolguera.freemyip.com
+            description: Simple HTTP-based pub-sub notification service
+            siteMonitor: https://ntfy.calfolguera.freemyip.com
+            statusStyle: 'dot'
 
     - Smarthome:
         - Home Assistant:
@@ -167,6 +173,18 @@ data:
               type: uptimekuma
               url: https://uptimekuma.calfolguera.freemyip.com
               slug: default
+        - Frigate:
+            icon: frigate.svg
+            href: https://frigate.calfolguera.freemyip.com
+            description: Open source NVR built around real-time AI object detection
+            siteMonitor: https://frigate.calfolguera.freemyip.com
+            statusStyle: 'dot'
+        - Immich:
+            icon: immich.svg
+            href: https://immich.calfolguera.freemyip.com
+            description: Easily back up, organize, and manage your photos on your own server
+            siteMonitor: https://immich.calfolguera.freemyip.com
+            statusStyle: 'dot'
 
     - Nerea:
         - OCI Tenant:
@@ -183,6 +201,29 @@ data:
             href: https://invoiceninja.calfolguera.freemyip.com
             description: CRM
             siteMonitor: https://invoiceninja.calfolguera.freemyip.com
+    - Misc:
+        - Ghostfolio:
+            icon: ghostfolio.svg
+            href: https://ghostfolio.calfolguera.freemyip.com
+            description: Open source dashboard for your personal finances
+        - Hashicorp Vault:
+            icon: hashicorp-vault.svg
+            href: https://vault.calfolguera.freemyip.com
+            description: Secure, store, and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets, and other sensitive data
+        - Lubelogger:
+            icon: lubelogger.svg
+            href: https://lubelogger.calfolguera.freemyip.com
+            description: Self-Hosted, Open-Source, Unconventionally-Named Vehicle Maintenance Records and Fuel Mileage Tracker
+        - RomM:
+            icon: romm.svg
+            href: https://romm.calfolguera.freemyip.com
+            description: Scan, enrich, browse and play your game collection
+        - Mealie:
+            icon: mealie.svg
+            href: https://mealie.calfolguera.freemyip.com
+            description: Intuitive and easy to use recipe management app
+
+
   widgets.yaml: |
     # - kubernetes:
     #     cluster:
