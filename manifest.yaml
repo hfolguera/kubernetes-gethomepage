@@ -157,11 +157,11 @@ data:
             description: The community driven password manager
             siteMonitor: https://vaultwarden.calfolguera.freemyip.com
             statusStyle: 'dot'
-        - Microbin:
-            icon: microbin.png
-            href: https://microbin.calfolguera.freemyip.com
-            description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
-            siteMonitor: https://microbin.calfolguera.freemyip.com
+        - Authentik:
+            icon: authentik.svg
+            href: https://authentik.calfolguera.freemyip.com
+            description: The community driven password manager
+            siteMonitor: https://authentik.calfolguera.freemyip.com
             statusStyle: 'dot'
         - Uptime Kuma:
             icon: uptime-kuma.svg
@@ -222,7 +222,18 @@ data:
             icon: mealie.svg
             href: https://mealie.calfolguera.freemyip.com
             description: Intuitive and easy to use recipe management app
-
+        - Microbin:
+            icon: microbin.png
+            href: https://microbin.calfolguera.freemyip.com
+            description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
+            siteMonitor: https://microbin.calfolguera.freemyip.com
+            statusStyle: 'dot'
+        - Isoflow:
+            icon: isoflow.png
+            href: https://isoflow.calfolguera.freemyip.com
+            description: Visual documentation for IT teams
+            siteMonitor: https://isoflow.calfolguera.freemyip.com
+            statusStyle: 'dot'
 
   widgets.yaml: |
     # - kubernetes:
