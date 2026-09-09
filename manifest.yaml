@@ -234,6 +234,18 @@ data:
             description: Visual documentation for IT teams
             siteMonitor: https://isoflow.calfolguera.freemyip.com
             statusStyle: 'dot'
+        - ChartDB:
+            icon: chart-db.png
+            href: https://chartdb.calfolguera.freemyip.com
+            description: Database schema diagrams visualizer
+            siteMonitor: https://chartdb.calfolguera.freemyip.com
+            statusStyle: 'dot'
+        - IT-tools:
+            icon: it-tools.png
+            href: https://it-tools.calfolguera.freemyip.com
+            description: Handy online tools for developers
+            siteMonitor: https://it-tools.calfolguera.freemyip.com
+            statusStyle: 'dot'
 
   widgets.yaml: |
     # - kubernetes:
