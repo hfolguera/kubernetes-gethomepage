@@ -29,11 +29,29 @@ metadata:
 data:
   kubernetes.yaml: |
     mode: cluster
-  settings.yaml: ""
-  #settings.yaml: |
-  #  providers:
-  #    longhorn:
-  #      url: https://longhorn.my.network
+  settings.yaml: |
+    title: Cal Folguera
+    fullWidth: true
+    target: _blank
+    layout:
+      Infrastructure:
+        style: column
+      Deployment and Services:
+        style: column
+      Security & Monitoring:
+        style: column
+      Multimedia:
+        style: column
+      Productivity:
+        style: column
+      Tools:
+        style: column
+      Smarthome:
+        style: column
+      Finance:
+        style: column
+      Developer:
+        style: column
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
@@ -43,209 +61,255 @@ data:
               href: https://github.com/hfolguera?tab=repositories
   services.yaml: |
     - Infrastructure:
-        - Router:
-            icon: dd-wrt.png
-            href: http://192.168.1.1
-            description: Mitrastar HGU gpt-2541gnac
-        - Proxmox:
-            icon: proxmox.png
-            href: https://cf-vm-node1.calfolguera.com:8006/
-            description: Hypervisor
-            siteMonitor: https://cf-vm-node1.calfolguera.com:8006/
-            widget:
-              type: proxmox
-              url: https://192.168.1.3:8006
-              username: api@pam!homepage
-              password: 22073850-c8a8-40ca-be03-3cf7e7277d66
-        - Synology ds220j:
-            icon: synology.png
-            href: https://192.168.1.11:5001/
-            description: Synology NAS
-            siteMonitor: https://192.168.1.11:5001/
-        - Zyxel NSA310S:
-            href: http://192.168.1.12
-            description: Zyxel NAS
-            siteMonitor: http://192.168.1.12
-
-    - Services:
-        - Argocd:
-            icon: argo-cd.png
-            href: https://argocd.calfolguera.freemyip.com
-            description: Declarative GitOps CD for Kubernetes
-            siteMonitor: https://argocd.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Jenkins:
-            icon: jenkins.png
-            href: https://jenkins.calfolguera.freemyip.com
-            description: Build great things at any scale
-            siteMonitor: https://jenkins.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - AWX:
-            icon: ansible.png
-            href: https://awx.calfolguera.freemyip.com
-            description: Provides a web-based user interface, REST API, and task engine built on top of Ansible
-            siteMonitor: https://awx.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Grafana:
-            icon: grafana.png
-            href: https://grafana.calfolguera.freemyip.com
-            description: Observability in minutes
-            siteMonitor: https://grafana.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Kibana:
-            icon: kibana.png
-            href: https://kibana.calfolguera.freemyip.com
-            description: Explore, Visualize, Discover Data
-            siteMonitor: https://kibana.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - N8N:
-            icon: n8n.png
-            href: https://n8n.calfolguera.freemyip.com
-            description: Automate Workflows Easily
-            siteMonitor: https://n8n.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Wordpress:
-            icon: wordpress.png
-            href: https://wordpress.calfolguera.freemyip.com
-            description: Do it all with WordPress
-            siteMonitor: https://wordpress.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Prometheus:
-            icon: prometheus.png
-            href: http://calfolguera.ddns.net:9090
-            description: An open-source monitoring system
-            siteMonitor: http://calfolguera.ddns.net:9090
-            statusStyle: 'dot'
-            widget:
-              type: prometheus
-              url: http://calfolguera.ddns.net:9090
-        - NTFY:
-            icon: ntfy.png
-            href: https://ntfy.calfolguera.freemyip.com
-            description: Simple HTTP-based pub-sub notification service
-            siteMonitor: https://ntfy.calfolguera.freemyip.com
-            statusStyle: 'dot'
-
+      - Router:
+          icon: dd-wrt.png
+          href: http://192.168.1.1
+          description: Mitrastar HGU gpt-2541gnac
+          siteMonitor: http://192.168.1.1
+          statusStyle: dot
+      - Proxmox:
+          icon: proxmox.png
+          href: https://cf-vm-node1.calfolguera.com:8006/
+          description: Hypervisor
+          siteMonitor: https://cf-vm-node1.calfolguera.com:8006/
+          widget:
+            type: proxmox
+            url: https://192.168.1.3:8006
+            username: api@pam!homepage
+            password: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
+          statusStyle: dot
+      - Synology DS220j:
+          icon: synology.png
+          href: https://192.168.1.11:5001/
+          description: Synology NAS
+          siteMonitor: https://192.168.1.11:5001/
+          statusStyle: dot
+      - Zyxel NSA310s:
+          href: http://192.168.1.12
+          description: Zyxel NAS
+          siteMonitor: http://192.168.1.12
+          statusStyle: dot
+      - TrueNAS:
+          icon: truenas.svg
+          href: https://truenas.calfolguera.freemyip.com
+          description: High performance data platform
+          siteMonitor: https://truenas.calfolguera.freemyip.com
+          statusStyle: dot
+      - OCI · hfolguera:
+          icon: oracle-cloud.png
+          href: https://cloud.oracle.com/?tenant=hfolguera
+          description: Consola Oracle Cloud · hfolguera
+          siteMonitor: https://cloud.oracle.com/?tenant=hfolguera
+          statusStyle: dot
+    - Deployment and Services:
+      - Argo CD:
+          icon: argo-cd.png
+          href: https://argocd.calfolguera.freemyip.com
+          description: Declarative GitOps CD for Kubernetes
+          siteMonitor: https://argocd.calfolguera.freemyip.com
+          statusStyle: dot
+      - Jenkins:
+          icon: jenkins.png
+          href: https://jenkins.calfolguera.freemyip.com
+          description: Build great things at any scale
+          siteMonitor: https://jenkins.calfolguera.freemyip.com
+          statusStyle: dot
+      - AWX:
+          icon: ansible.png
+          href: https://awx.calfolguera.freemyip.com
+          description: Provides a web-based user interface, REST API, and task engine
+            built on top of Ansible
+          siteMonitor: https://awx.calfolguera.freemyip.com
+          statusStyle: dot
+      - n8n:
+          icon: n8n.png
+          href: https://n8n.calfolguera.freemyip.com
+          description: Automate Workflows Easily
+          siteMonitor: https://n8n.calfolguera.freemyip.com
+          statusStyle: dot
+      - Grafana:
+          icon: grafana.png
+          href: https://grafana.calfolguera.freemyip.com
+          description: Observability in minutes
+          siteMonitor: https://grafana.calfolguera.freemyip.com
+          statusStyle: dot
+      - Kibana:
+          icon: kibana.png
+          href: https://kibana.calfolguera.freemyip.com
+          description: Explore, Visualize, Discover Data
+          siteMonitor: https://kibana.calfolguera.freemyip.com
+          statusStyle: dot
+      - ntfy:
+          icon: ntfy.png
+          href: https://ntfy.calfolguera.freemyip.com
+          description: Simple HTTP-based pub-sub notification service
+          siteMonitor: https://ntfy.calfolguera.freemyip.com
+          statusStyle: dot
+    - Security & Monitoring:
+      - AdGuard:
+          icon: adguard-home.svg
+          href: https://adguard.calfolguera.freemyip.com
+          description: Surf the Web ad-free and safely. Shields up!
+          siteMonitor: https://adguard.calfolguera.freemyip.com
+          statusStyle: dot
+      - Authentik:
+          icon: authentik.svg
+          href: https://authentik.calfolguera.freemyip.com
+          description: The community driven password manager
+          siteMonitor: https://authentik.calfolguera.freemyip.com
+          statusStyle: dot
+      - Vaultwarden:
+          icon: vaultwarden.svg
+          href: https://vaultwarden.calfolguera.freemyip.com
+          description: The community driven password manager
+          siteMonitor: https://vaultwarden.calfolguera.freemyip.com
+          statusStyle: dot
+      - HashiCorp Vault:
+          icon: hashicorp-vault.svg
+          href: https://vault.calfolguera.freemyip.com
+          description: Secure, store, and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets, and other sensitive data
+          siteMonitor: https://vault.calfolguera.freemyip.com
+          statusStyle: dot
+      - Uptime Kuma:
+          icon: uptime-kuma.svg
+          href: https://uptimekuma.calfolguera.freemyip.com
+          description: A self-hosted monitoring tool
+          siteMonitor: https://uptimekuma.calfolguera.freemyip.com
+          statusStyle: dot
+          widget:
+            type: uptimekuma
+            url: https://uptimekuma.calfolguera.freemyip.com
+            slug: default
+      - Prometheus:
+          icon: prometheus.png
+          href: http://calfolguera.ddns.net:9090
+          description: An open-source monitoring system
+          siteMonitor: http://calfolguera.ddns.net:9090
+          statusStyle: dot
+          widget:
+            type: prometheus
+            url: http://calfolguera.ddns.net:9090
+    - Multimedia:
+      - Immich:
+          icon: immich.svg
+          href: https://immich.calfolguera.freemyip.com
+          description: Easily back up, organize, and manage your photos on your own server
+          siteMonitor: https://immich.calfolguera.freemyip.com
+          statusStyle: dot
+      - Plex:
+          icon: plex.png
+          href: http://192.168.1.11:32400/web
+          description: Plex Media Server
+          siteMonitor: http://192.168.1.11:32400/web
+          widget:
+            type: plex
+            url: http://192.168.1.11:32400
+            key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
+          statusStyle: dot
+      - Jellyfin:
+          icon: jellyfin.svg
+          href: "https://jellyfin.calfolguera.freemyip.com"
+          description: Collect, manage and stream media
+          siteMonitor: "https://jellyfin.calfolguera.freemyip.com"
+          statusStyle: dot
+      - RomM:
+          icon: romm.svg
+          href: https://romm.calfolguera.freemyip.com
+          description: Scan, enrich, browse and play your game collection
+          siteMonitor: https://romm.calfolguera.freemyip.com
+          statusStyle: dot
+    - Productivity:
+      - Nextcloud:
+          icon: nextcloud.svg
+          href: https://nextcloud.calfolguera.freemyip.com
+          description: Collaboration platform
+          siteMonitor: https://nextcloud.calfolguera.freemyip.com/status.php
+          statusStyle: dot
+      - Vikunja:
+          icon: vikunja.svg
+          href: https://vikunja.calfolguera.freemyip.com
+          description: Open-source task manager
+          siteMonitor: https://vikunja.calfolguera.freemyip.com
+          statusStyle: dot
+      - Microbin:
+          icon: microbin.png
+          href: https://microbin.calfolguera.freemyip.com
+          description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
+          siteMonitor: https://microbin.calfolguera.freemyip.com
+          statusStyle: dot
+      - WordPress · Homelab:
+          icon: wordpress.png
+          href: https://wordpress.calfolguera.freemyip.com
+          description: Do it all with WordPress
+          siteMonitor: https://wordpress.calfolguera.freemyip.com
+          statusStyle: dot
+    - Tools:
+      - Isoflow:
+          icon: https://cdn-1.webcatalog.io/catalog/isoflow/isoflow-icon-filled-256.webp
+          href: https://isoflow.calfolguera.freemyip.com
+          description: Visual documentation for IT teams
+          siteMonitor: https://isoflow.calfolguera.freemyip.com
+          statusStyle: dot
+      - ChartDB:
+          icon: chart-db.png
+          href: https://chartdb.calfolguera.freemyip.com
+          description: Database schema diagrams visualizer
+          siteMonitor: https://chartdb.calfolguera.freemyip.com
+          statusStyle: dot
+      - IT-Tools:
+          icon: it-tools.png
+          href: https://it-tools.calfolguera.freemyip.com
+          description: Handy online tools for developers
+          siteMonitor: https://it-tools.calfolguera.freemyip.com
+          statusStyle: dot
     - Smarthome:
-        - Home Assistant:
-            icon: home-assistant.png
-            href: http://homeassistant.calfolguera.com
-            description: Home Assistant
-            siteMonitor: http://homeassistant.calfolguera.com
-            widget:
-              type: homeassistant
-              url: http://homeassistant.calfolguera.com:8123
-              key: access_token
-        - Plex:
-            icon: plex.png
-            href: http://192.168.1.11:32400/web
-            description: Plex Media Server
-            siteMonitor: http://192.168.1.11:32400/web
-            widget:
-              type: plex
-              url: http://192.168.1.11:32400
-              key: j9csoswLX6swa4gA9YgV
-        - Adguard:
-            icon: adguard-home.svg
-            href: https://adguard.calfolguera.freemyip.com
-            description: Surf the Web ad-free and safely. Shields up!
-            siteMonitor: https://adguard.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Vaultwarden:
-            icon: vaultwarden.svg
-            href: https://vaultwarden.calfolguera.freemyip.com
-            description: The community driven password manager
-            siteMonitor: https://vaultwarden.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Authentik:
-            icon: authentik.svg
-            href: https://authentik.calfolguera.freemyip.com
-            description: The community driven password manager
-            siteMonitor: https://authentik.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Uptime Kuma:
-            icon: uptime-kuma.svg
-            href: https://uptimekuma.calfolguera.freemyip.com
-            description: A self-hosted monitoring tool
-            siteMonitor: https://uptimekuma.calfolguera.freemyip.com
-            statusStyle: 'dot'
-            widget:
-              type: uptimekuma
-              url: https://uptimekuma.calfolguera.freemyip.com
-              slug: default
-        - Frigate:
-            icon: frigate.svg
-            href: https://frigate.calfolguera.freemyip.com
-            description: Open source NVR built around real-time AI object detection
-            siteMonitor: https://frigate.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Immich:
-            icon: immich.svg
-            href: https://immich.calfolguera.freemyip.com
-            description: Easily back up, organize, and manage your photos on your own server
-            siteMonitor: https://immich.calfolguera.freemyip.com
-            statusStyle: 'dot'
-
-    - Nerea:
-        - OCI Tenant:
-            icon: oracle-cloud.png
-            href: https://cloud.oracle.com/?tenant=nereamena&provider=default
-            description: Oracle Cloud Infrastructure
-        - Wordpress:
-            icon: wordpress.png
-            href: https://nereamenapsicologia.com
-            description: Website
-            siteMonitor: https://nereamenapsicologia.com
-        - InvoiceNinja:
-            icon: invoice-ninja-light.svg
-            href: https://invoiceninja.calfolguera.freemyip.com
-            description: CRM
-            siteMonitor: https://invoiceninja.calfolguera.freemyip.com
-    - Misc:
-        - Ghostfolio:
-            icon: ghostfolio.svg
-            href: https://ghostfolio.calfolguera.freemyip.com
-            description: Open source dashboard for your personal finances
-        - Hashicorp Vault:
-            icon: hashicorp-vault.svg
-            href: https://vault.calfolguera.freemyip.com
-            description: Secure, store, and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets, and other sensitive data
-        - Lubelogger:
-            icon: lubelogger.svg
-            href: https://lubelogger.calfolguera.freemyip.com
-            description: Self-Hosted, Open-Source, Unconventionally-Named Vehicle Maintenance Records and Fuel Mileage Tracker
-        - RomM:
-            icon: romm.svg
-            href: https://romm.calfolguera.freemyip.com
-            description: Scan, enrich, browse and play your game collection
-        - Mealie:
-            icon: mealie.svg
-            href: https://mealie.calfolguera.freemyip.com
-            description: Intuitive and easy to use recipe management app
-        - Microbin:
-            icon: microbin.png
-            href: https://microbin.calfolguera.freemyip.com
-            description: MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application
-            siteMonitor: https://microbin.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - Isoflow:
-            icon: isoflow.png
-            href: https://isoflow.calfolguera.freemyip.com
-            description: Visual documentation for IT teams
-            siteMonitor: https://isoflow.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - ChartDB:
-            icon: chart-db.png
-            href: https://chartdb.calfolguera.freemyip.com
-            description: Database schema diagrams visualizer
-            siteMonitor: https://chartdb.calfolguera.freemyip.com
-            statusStyle: 'dot'
-        - IT-tools:
-            icon: it-tools.png
-            href: https://it-tools.calfolguera.freemyip.com
-            description: Handy online tools for developers
-            siteMonitor: https://it-tools.calfolguera.freemyip.com
-            statusStyle: 'dot'
+      - Home Assistant:
+          icon: home-assistant.png
+          href: http://homeassistant.calfolguera.com
+          description: Home Assistant
+          siteMonitor: http://homeassistant.calfolguera.com
+          widget:
+            type: homeassistant
+            url: http://homeassistant.calfolguera.com:8123
+            key: "{{HOMEPAGE_VAR_HOMEASSISTANT_TOKEN}}"
+          statusStyle: dot
+      - Frigate:
+          icon: frigate.svg
+          href: https://frigate.calfolguera.freemyip.com
+          description: Open source NVR built around real-time AI object detection
+          siteMonitor: https://frigate.calfolguera.freemyip.com
+          statusStyle: dot
+      - Mealie:
+          icon: mealie.svg
+          href: https://mealie.calfolguera.freemyip.com
+          description: Intuitive and easy to use recipe management app
+          siteMonitor: https://mealie.calfolguera.freemyip.com
+          statusStyle: dot
+      - LubeLogger:
+          icon: sh-lubelogger.png
+          href: https://lubelogger.calfolguera.freemyip.com
+          description: Self-Hosted, Open-Source, Unconventionally-Named Vehicle Maintenance Records and Fuel Mileage Tracker
+          siteMonitor: https://lubelogger.calfolguera.freemyip.com
+          statusStyle: dot
+    - Finance:
+      - Invoice Ninja:
+          icon: invoice-ninja-light.svg
+          href: https://invoiceninja.calfolguera.freemyip.com
+          description: CRM
+          siteMonitor: https://invoiceninja.calfolguera.freemyip.com
+          statusStyle: dot
+      - Ghostfolio:
+          icon: ghostfolio.svg
+          href: https://ghostfolio.calfolguera.freemyip.com
+          description: Open source dashboard for your personal finances
+          siteMonitor: https://ghostfolio.calfolguera.freemyip.com
+          statusStyle: dot
+      - Wealthfolio:
+          icon: mdi-finance
+          href: https://wealthfolio.calfolguera.freemyip.com
+          description: Open-source investment tracker
+          siteMonitor: https://wealthfolio.calfolguera.freemyip.com
+          statusStyle: dot
 
   widgets.yaml: |
     # - kubernetes:
@@ -378,6 +442,10 @@ spec:
           env:
           - name: HOMEPAGE_ALLOWED_HOSTS
             value: "homepage.calfolguera.freemyip.com,192.168.1.7,192.168.1.8,192.168.1.9:3000"
+          envFrom:
+            - secretRef:
+                name: homepage-widget-credentials
+                optional: true
           volumeMounts:
             - mountPath: /app/config/custom.js
               name: homepage-config
@@ -437,3 +505,4 @@ spec:
 #                 name: homepage
 #                 port:
 #                   number: 3000
+
